@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View JS Code</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #0f0; padding: 20px; }
+    pre { white-space: pre-wrap; word-break: break-word; }
+  </style>
+</head>
+<body>
+  <h2>Code from Download/asdasd.js</h2>
+  <pre id="codeBlock">Loading...</pre>
+
+  <script>
+    fetch("index.js")
+      .then(res => res.text())
+      .then(code => {
+        document.getElementById("codeBlock").textContent = code;
+      })
+      .catch(err => {
+        document.getElementById("codeBlock").textContent = "Error loading code: " + err;
+      });
+  </script>
+</body>
+</html>
